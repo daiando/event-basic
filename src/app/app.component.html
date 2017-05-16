@@ -1,3 +1,8 @@
-<h1>
-  {{title}}
-</h1>
+<h3>{{title}}</h3>
+
+<zippy (updateEmployee) ="saveData($event)"
+[student] ="studentObj"> </zippy>
+
+<p>{{studentObj.fname + ' '+ studentObj.lname}} </p>
+
+<p>{{fullName}}</p>

@@ -1,0 +1,39 @@
+<div>
+	<b>Id: {{student.id}} </b> <br/>
+	<input [value]="student.fname"
+	(input)="student.fname=$event.target.value"/> <br/>
+	<input [value]="student.lname"
+	(input)="student.lname=$event.target.value"/> <br/>
+	<br/>
+	<button (click)="update()">Update</button>
+
+<hr>
+<br>
+ <label for="">pasta</label>
+  <select placeholder="group1" name="group1" [(ngModel)]="selectedPasta" (ngModelChange)="pastaChanged($event)">
+  	<option *ngFor="let pasta of pastas" [value]="pasta.id">
+		  {{pasta.name}}
+	  </option>
+  </select>
+  <br>
+	<label for="">pizza</label>
+	<div class="" *ngIf="selectedPasta == 2">
+		<select placeholder="group2" name="group2" [(ngModel)]="selectedPizza" (ngModelChange)="pizzaChanged($event)">
+	  	<option *ngFor="let pizza of pizzas" [value]="pizza.name">
+				{{pizza.name}}
+			</option>
+	  </select>
+	</div>
+	<div class="" *ngIf="selectedPasta != 2">
+		<select placeholder="group3" name="group3" [(ngModel)]="selectedPizza2" (ngModelChange)="pizzaChanged2($event)">
+	  	<option *ngFor="let pizza of pizzas2" [value]="pizza.name">
+				{{pizza.name}}
+			</option>
+	  </select>
+	</div>
+</div>
+<br>
+
+{{selectedPasta}}
+<hr>
+<br>
